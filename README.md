@@ -16,6 +16,7 @@
 ## Features
 
 - 📥 Download media (photos, videos, audio, documents).
+- 🎬 Download restricted **stories** (photo or video) from any user/channel.
 - ✅ Supports downloading from both single media posts and media groups.
 - 🔄 Progress bar showing real-time downloading progress.
 - ✍️ Copy text messages or captions from Telegram posts.
@@ -76,12 +77,18 @@ docker compose down
 - **`/bdl <start_link> <end_link>`** – Batch-download a range of posts in one go.  
 
   > 💡 Example: `/bdl https://t.me/mychannel/100 https://t.me/mychannel/120`  
+- **`/dls <story_URL>`** or simply paste a Telegram story link – Download a restricted **story** (photo or video).  
+
+  > 💡 Example: `/dls https://t.me/username/s/12`  
+- **`/bdls <start_link> <end_link>`** – Batch-download a range of stories from the same user/channel.  
+
+  > 💡 Example: `/bdls https://t.me/username/s/10 https://t.me/username/s/25`  
 - **`/killall`** – Cancel any pending downloads if the bot hangs.  
 - **`/logs`** – Download the bot’s logs file.  
 - **`/cleanup`** – Remove temporary downloaded files from the server.  
 - **`/stats`** – View current status (uptime, disk, memory, network, CPU, etc.).  
 
-> **Note:** Make sure that your user session is a member of the source chat or channel before downloading.
+> **Note:** Make sure that your user session is a member of the source chat or channel before downloading. For story downloads, the user session must be able to view the story (e.g., follow the user / be in the channel). Stories are only visible for 24h unless pinned.
 
 ## Author
 
