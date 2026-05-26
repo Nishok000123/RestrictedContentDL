@@ -45,11 +45,3 @@ class PyroConf(object):
     FLOOD_WAIT_DELAY = int(getenv("FLOOD_WAIT_DELAY", "10"))
 
     FORWARD_CHAT_ID = getenv("FORWARD_CHAT_ID", "").strip() or None
-
-    # Comma-separated list of Telegram user IDs allowed to use the bot.
-    # If empty, the bot is open to everyone (NOT recommended).
-    OWNER_ID = [
-        int(x.strip())
-        for x in getenv("OWNER_ID", "").split(",")
-        if x.strip().isdigit()
-    ]
